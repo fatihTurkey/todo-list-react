@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  margin: 20px auto;
+  width: 960px;
+  max-width: 100%;
+  padding: 20px;
+}
+form.form {
+  background-color: #e2e2e2;
+  padding: 20px;
+}
+.form.input,
+.form label {
+  width: 100%;
+  display: block;
+}
+.form label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.input-wrap {
+  margin: 20px 0;
+}
+.input {
+  width: 100%;
+  height: 44px;
+  padding: 10px;
+}
+.validation {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(209, 4, 4);
+}
+.submit {
+  display: inline-flex;
+  width: 250px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 0;
+  background-color: green;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.product-list > * {
+  padding: 10px;
+  flex: 0 0 50%;
+}
+.product-list .product-item {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  margin: 0;
+}
+.product-list img {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+.delete-product {
+  background-color: rgb(131, 125, 125);
+  color: #fff;
+  border: 0;
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.product-buttons {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.count {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  justify-content: center;
+}
+.delete-basket,
+.add-basket {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  line-height: 0;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  transition: 0.3s ease all;
+}
+
+.delete-basket:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+.delete-basket {
+  background-color: red;
+}
+.add-basket {
+  background-color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-list > * {
+    flex: 0 0 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-list {
+  list-style: none;
+}
+.todo-list li {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 5px;
+}
+.todo-list li.completed span {
+  text-decoration: line-through;
+}
+.todo-list li span {
+  margin-right: auto;
+}
+.todo-list li.completed {
+  background-color: green;
+  color: #fff;
+}
+
+.todo-list button {
+  background-color: #e2e2e2;
+  border: 0;
+  outline: 0;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.dark {
+  background-color: #222;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.light {
+  background-color: white;
+  color: #222;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.p-2 {
+  padding: 15px 10px;
 }
